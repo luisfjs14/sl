@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to right, #ffe6f0, #e6f7ff);
+  color: #333;
+  text-align: center;
+}
+
+header {
+  padding: 2rem;
+  background-color: #fff0f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin: 0;
+  color: #ff4081;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column; /* Altera a direção para coluna */
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.together-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #ff4081;
+  margin: 0;
+}
+
+.timer-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.3);
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.milliseconds {
+  position: relative;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #e91e63;
+  background-color: #fff0f5;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+  background-size: cover;
+  animation: float 4s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    bottom: 0;
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+.story, .love-list {
+  margin: 3rem 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story h2, .love-list h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #ff4081;
+}
+
+.story p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.love-list ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.love-list li::before {
+  content: '❤️ ';
+}
+
+.photo-section {
+  margin: 3rem 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.photo-section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #ff4081;
+}
+
+.photo-container, .logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-5px);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos para os logos de time */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* Ajuste o espaçamento se necessário */
+  margin-top: 2rem;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+}
+
+.team-logo {
+  max-width: 80px; /* Define o tamanho máximo para os escudos dos times */
+}
+
+.heart-logo {
+  max-width: 40px; /* Define o tamanho máximo para o coração */
+}
+
+/* Removendo a moldura branca */
+.logo-frame {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query para responsividade */
+@media (min-width: 768px) {
+  .photo-frame {
+    width: calc(33% - 1.5rem);
+  }
+}
