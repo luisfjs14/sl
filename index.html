@@ -11,11 +11,17 @@
 </head>
 
 <body>
-    <audio id="background-audio" src="audio/audio.mp3" loop autoplay></audio>
   <header>
     <h1>Suzanny & Luís</h1>
   </header>
-
+  <!-- Pop-up de comemoração -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>🎉 Feliz 1 Ano de Namoro 🎉</h2>
+    <p>Suzanny & Luís — 365 dias de amor 💖</p>
+    <button class="surprise-btn" onclick="closePopup()">Fechar</button>
+  </div>
+</div>
   <section class="timer">
     <h2 class="together-title">Juntos à:</h2>
     <div class="timer-line">
@@ -46,13 +52,27 @@
     E já foram: <span id="milliseconds">0</span> ms
     <div id="heart-container"></div>
   </div>
+  <section class="game-section">
+  <button class="surprise-btn" onclick="startGame()">💝 Clique aqui para uma surpresa 💝</button>
+  <div id="game-area" class="hidden">
+    <h3>💘 Pegue os corações!</h3>
 
+    <!-- Placar -->
+    <div class="scoreboard">
+      <p><strong>Pontuação de Luís:</strong> <span id="luis-score">+9999</span></p>
+      <p><strong>Sua pontuação:</strong> <span id="her-score">0</span></p>
+    </div>
+
+    <div id="hearts-container"></div>
+    <p id="special-message" class="hidden"></p>
+  </div>
+</section>
   <section class="story">
     <h2>Nossa História</h2>
-    <p>Desde o dia 2 de setembro de 2024 às 17h20, nossas vidas mudaram para sempre. Cada olhar, cada abraço, cada mensagem trocada fortalece esse amor tão verdadeiro. Somos parceiros, amigos, amantes e sonhadores. Criamos juntos um caminho cheio de sorrisos, descobertas, superações e muito carinho.</p>
+    <p>Desde o dia 2 de setembro de 2024 às 16h15, nossas vidas mudaram para sempre. Cada olhar, cada abraço, cada mensagem trocada fortalece esse amor tão verdadeiro. Somos parceiros, amigos, amantes e sonhadores. Criamos juntos um caminho cheio de sorrisos, descobertas, superações e muito carinho.</p>
     <p>Lembro de quando a gente se conheceu, como tudo parecia tão simples e leve. Aos poucos, cada conversa foi construindo esse amor tão forte que hoje preenche todos os nossos dias.</p>
   </section>
-
+  
   <section class="love-list">
     <h2>Coisas que Amo em Você</h2>
     <ul>
@@ -65,20 +85,7 @@
     </ul>
   </section>
   <section class="photo-section" id="nossas-fotos">
-    <div class="photo-container">
-      <div class="photo-frame">
-        <img src="img/4.JPEG" alt="Nossa foto favorita 1">
-      </div>
-      <div class="photo-frame">
-        <img src="img/5.PNG" alt="Nossa foto favorita 2">
-      </div>
-      <div class="photo-frame">
-        <img src="img/6.JPEG" alt="Nossa foto favorita 3">
-      </div>
-    </div>
-  </section>
-  <section class="photo-section" id="nossas-fotos">
-    <h2>Minhas Fotos Favoritas</h2>
+    <h2>Eu</h2>
     <div class="photo-container">
       <div class="photo-frame">
         <img src="img/1.JPEG" alt="Nossa foto favorita 1">
@@ -91,6 +98,37 @@
       </div>
     </div>
   </section>
+  <section class="photo-section" id="nossas-fotos">
+    <h2>Te</h2>
+    <div class="photo-container">
+      <div class="photo-frame">
+        <img src="img/4.JPEG" alt="Nossa foto favorita 1">
+      </div>
+      <div class="photo-frame">
+        <img src="img/5.JPEG" alt="Nossa foto favorita 2">
+      </div>
+      <div class="photo-frame">
+        <img src="img/6.JPEG" alt="Nossa foto favorita 3">
+      </div>
+    </div>
+  </section>
+   <section class="photo-section" id="nossas-fotos">
+    <h2>Amoooo</h2>
+    <div class="photo-container">
+      <div class="photo-frame">
+        <img src="img/7.JPEG" alt="Nossa foto favorita 1">
+      </div>
+      <div class="photo-frame">
+        <img src="img/8.JPEG" alt="Nossa foto favorita 2">
+      </div>
+      <div class="photo-frame">
+        <img src="img/9.JPEG" alt="Nossa foto favorita 3">
+      </div>
+    </div>
+    <h2>Muitão!</h2>
+  </section>
+  
+  <h2>Área em desenvolvimento...</h2>
 
   <section class="photo-section" id="nossas-cores">
     <div class="logo-container">
@@ -108,6 +146,5 @@
 
   <script src="js/script.js"></script>
 </body>
-
 
 </html>
