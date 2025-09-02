@@ -1,4 +1,4 @@
-const startDate = new Date('2024-09-02T16:15:00');
+const startDate = new Date('2024-09-02T00:00:00');
 const millisecondsElement = document.getElementById("milliseconds");
 const yearsBox = document.getElementById("yearsBox");
 const monthsBox = document.getElementById("monthsBox");
@@ -94,3 +94,65 @@ document.addEventListener('DOMContentLoaded', () => {
     playAudio();
   }, { once: true }); // O { once: true } garante que o evento será executado apenas uma vez
 });
+
+// ===== Pop-up =====
+window.onload = function() {
+  document.getElementById("popup").style.display = "flex";
+};
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+// ===== Joguinho =====
+let luisScore = 99; // seu recorde
+let herScore = 0;     // começa zerada
+let gameInterval;
+let specialShown = false; // controle para não repetir a mensagem
+
+function startGame() {
+  document.getElementById("game-area").classList.remove("hidden");
+  document.getElementById("luis-score").innerText = "" + luisScore;
+  document.getElementById("her-score").innerText = herScore;
+
+  // esconde mensagem se for jogar de novo
+  document.getElementById("special-message").classList.add("hidden");
+  specialShown = false;
+
+  clearInterval(gameInterval);
+  gameInterval = setInterval(createHeart, 800); // corações mais rápidos
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("falling-heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 90 + "%";
+
+  heart.onclick = function() {
+    herScore++;
+    document.getElementById("her-score").innerText = herScore;
+
+    // verifica se passou seu recorde
+    if (herScore > luisScore && !specialShown) {
+      showSpecialMessage();
+      specialShown = true;
+    }
+
+    heart.remove();
+  };
+
+  document.getElementById("hearts-container").appendChild(heart);
+
+  setTimeout(() => {
+    if (heart.parentElement) {
+      heart.remove();
+    }
+  }, 3000); // some depois de 1.5s
+}
+
+function showSpecialMessage() {
+  const msg = document.getElementById("special-message");
+  msg.innerText = "✨ Parabéns amor! Você passou meu recorde, mas todos esses corações não valem o que você me deu 🥺";
+  msg.classList.remove("hidden");
+}
