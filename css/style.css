@@ -2,27 +2,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to right, #ffe6f0, #e6f7ff);
-  color: #333;
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  color: #FFD700;
   text-align: center;
 }
 
 header {
   padding: 2rem;
-  background-color: #fff0f5;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #111;
+  box-shadow: 0 2px 15px rgba(255, 215, 0, 0.4);
 }
 
 header h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
   margin: 0;
-  color: #ff4081;
+  color: #FFD700;
 }
 
 .timer {
   display: flex;
-  flex-direction: column; /* Altera a direção para coluna */
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
@@ -31,7 +31,7 @@ header h1 {
 .together-title {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
-  color: #ff4081;
+  color: #FFD700;
   margin: 0;
 }
 
@@ -44,26 +44,29 @@ header h1 {
 }
 
 .box {
-  background-color: #fff;
+  background-color: #222;
   border-radius: 12px;
   padding: 1rem 2rem;
-  box-shadow: 0 0 15px rgba(255, 64, 129, 0.3);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
   font-size: 1.5rem;
   font-weight: bold;
   min-width: 120px;
+  border: 2px solid #FFD700;
+  color: #FFD700;
 }
 
 .milliseconds {
   position: relative;
   margin-top: 2rem;
   font-size: 1.2rem;
-  color: #e91e63;
-  background-color: #fff0f5;
+  color: #FFD700;
+  background-color: #111;
   padding: 1rem;
   border-radius: 12px;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 .heart {
@@ -77,14 +80,8 @@ header h1 {
 }
 
 @keyframes float {
-  0% {
-    bottom: 0;
-    opacity: 0.8;
-  }
-  100% {
-    bottom: 100%;
-    opacity: 0;
-  }
+  0% { bottom: 0; opacity: 0.8; }
+  100% { bottom: 100%; opacity: 0; }
 }
 
 .story, .love-list {
@@ -97,12 +94,13 @@ header h1 {
 .story h2, .love-list h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
-  color: #ff4081;
+  color: #FFD700;
 }
 
 .story p {
   font-size: 1.2rem;
   line-height: 1.6;
+  color: #f5f5f5;
 }
 
 .love-list ul {
@@ -112,7 +110,7 @@ header h1 {
 }
 
 .love-list li::before {
-  content: '❤️ ';
+  content: '💛 ';
 }
 
 .photo-section {
@@ -126,7 +124,7 @@ header h1 {
 .photo-section h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
-  color: #ff4081;
+  color: #FFD700;
 }
 
 .photo-container, .logo-container {
@@ -140,11 +138,12 @@ header h1 {
 .photo-frame {
   width: 100%;
   max-width: 300px;
-  background-color: #fff;
+  background-color: #111;
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
   transition: transform 0.3s ease;
+  border: 2px solid #FFD700;
 }
 
 .photo-frame:hover {
@@ -157,12 +156,12 @@ header h1 {
   border-radius: 8px;
 }
 
-/* Estilos para os logos de time */
+/* Logos de time */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem; /* Ajuste o espaçamento se necessário */
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -172,14 +171,13 @@ header h1 {
 }
 
 .team-logo {
-  max-width: 80px; /* Define o tamanho máximo para os escudos dos times */
+  max-width: 80px;
 }
 
 .heart-logo {
-  max-width: 40px; /* Define o tamanho máximo para o coração */
+  max-width: 40px;
 }
 
-/* Removendo a moldura branca */
 .logo-frame {
   background: none;
   border-radius: 0;
@@ -190,9 +188,155 @@ header h1 {
   justify-content: center;
 }
 
-/* Media Query para responsividade */
+/* Responsividade */
 @media (min-width: 768px) {
   .photo-frame {
     width: calc(33% - 1.5rem);
   }
+}
+
+/* Pop-up */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.popup-content {
+  background: #111;
+  border: 2px solid #FFD700;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: pop 0.6s ease;
+  color: #FFD700;
+}
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Joguinho */
+.game-section {
+  text-align: center;
+  margin: 50px 0;
+}
+#game-area {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border: 2px dashed #FFD700;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+.falling-heart {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  animation: fall 1.5s linear forwards;
+}
+@keyframes fall {
+  from { top: -30px; }
+  to { top: 100%; }
+}
+
+/* Botão surpresa */
+.surprise-btn {
+  background: linear-gradient(45deg, #FFD700, #b8860b);
+  border: none;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
+  font-weight: bold;
+}
+.surprise-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #b8860b, #FFD700);
+}
+
+/* Placar */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.player-score {
+  background: #111;
+  border: 2px solid #FFD700;
+  border-radius: 15px;
+  padding: 15px 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.player-score h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #FFD700;
+}
+
+.player-score p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0 0;
+  color: #FFD700;
+}
+/* Botão surpresa */
+.surprise-btn {
+  background: linear-gradient(45deg, #ff6699, #ff3366);
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 0, 100, 0.4);
+}
+.surprise-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff3366, #cc0055);
+}
+
+/* Placar */
+.scoreboard {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #ff3366;
+}
+
+/* Corações caindo mais rápidos */
+.falling-heart {
+  position: absolute;
+  font-size: 32px;
+  cursor: pointer;
+  animation: fall 1.5s linear forwards;
+}
+@keyframes fall {
+  from { top: -40px; }
+  to { top: 100%; }
+}
+
+/* Mensagem especial */
+#special-message {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0066;
+}
+.hidden {
+  display: none;
 }
